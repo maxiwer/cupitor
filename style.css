@@ -1,3 +1,22 @@
 * {
   box-sizing: border-box;
 }
+
+body {
+  background-color: #c2dfe3;
+  font-family: "Josefin Slab", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: #9db4c0;
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 19px 20px 3px -9px rgba(0, 0, 0, 0.3);
+  width: 400px;
+}
