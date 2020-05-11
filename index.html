@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cupitor - main page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- the table div -->
+    <div class="tableSection">
+        <table border="1">
+            <!-- head of table -->
+            <thead>
+                <tr>
+                    <th>Unique Words</th>
+                    <th>Replace With...</th>
+                </tr>
+            </thead>
+            <!-- the body of the table itself -->
+            <tbody>
+                <!-- 1st placeholder row -->
+                <tr>
+                    <th>Some unique word</th>
+                    <th>
+                        <textarea name="replaceWith" id="" cols="20" rows="2"
+                            placeholder='Some phrase or word to replace'></textarea>
+                    </th>
+                </tr>
+                <!-- 2nd placeholder row -->
+                <tr>
+                    <th>Another unique word</th>
+                    <th>
+                        <textarea name="replaceWith" id="" cols="20" rows="2"
+                            placeholder='Some phrase or word to replace'></textarea>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+        <!-- submit button -->
+        <input type="submit" value="Submit">
+    </div>
+
+    <!-- file open menu div -->
+    <div class="menuSection">
+        <h3>Open File...</h3>
+        <button>Browse...</button>
+    </div>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+</body>
+
+</html>
