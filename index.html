@@ -41,15 +41,16 @@
                 </tbody>
             </table>
             <!-- submit button -->
-            <input type="submit" value="Submit">
+            <input onclick="onSubmit()" type="submit" value="Submit">
         </div>
+        <hr color="white">
         <!-- file open menu div -->
         <div class="menuSection">
             <h3>Open File...</h3>
-            <button>Browse...</button>
+            <input type="file" onchange="read(this)" />
         </div>
-
     </div>
+
     <!-- JavaScript File -->
     <script src="script.js"></script>
 </body>
