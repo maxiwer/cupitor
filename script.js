@@ -11,22 +11,16 @@ function readFile(file) {
 async function read(input) {
   const txtFile = await readFile(input.files[0]);
   let arrBySpaceSplit = [];
-  let finalArr = [];
-
-  console.log(
-    "%c" + txtFile,
-    `background-color: darkBlue; color: white; font-size: 14px;`
-  );
 
   let arrByEnterSplit = txtFile.split("\n");
 
   if (arrByEnterSplit.length > 1) {
-    arrBySpaceSplit = arrByEnterSplit.map((element) => {
-      if (element.length > 0) {
+    arrBySpaceSplit = arrByEnterSplit
+      .filter((el) => el.length > 1)
+      .map((element) => {
         return element.split(" ");
-      }
-    });
-    console.log("hey", arrBySpaceSplit);
+      });
+      alert(arrBySpaceSplit);
   } else {
     arrBySpaceSplit = txtFile.trim().split(" ");
   }
