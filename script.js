@@ -1,4 +1,6 @@
 const uniqueWordsArr = document.querySelectorAll("th");
+let uniqueWordsMap = new Set();
+let txtFile = '';
 
 function readFile(file) {
   return new Promise((resolve, reject) => {
@@ -9,23 +11,48 @@ function readFile(file) {
 }
 
 async function read(input) {
-  const txtFile = await readFile(input.files[0]);
-  let arrBySpaceSplit = [];
+  txtFile = await readFile(input.files[0]);
+  const arr = txtFile.match(/\w+/gi);
 
-  let arrByEnterSplit = txtFile.split("\n");
+  displayFileText(txtFile);
+  removeDuplicates(arr);
+}
 
-  if (arrByEnterSplit.length > 1) {
-    arrBySpaceSplit = arrByEnterSplit
-      .filter((el) => el.length > 1)
-      .map((element) => {
-        return element.split(" ");
-      });
-      alert(arrBySpaceSplit);
-  } else {
-    arrBySpaceSplit = txtFile.trim().split(" ");
-  }
+function removeDuplicates(arr) {
+  let i = 0;
+  do {
+    uniqueWordsMap.add(arr[i]);
+    i++;
+  } while (i < arr.length - 1 && !uniqueWordsMap.has(arr[i]) );
+
+  console.info( `~uniqueWordsMap: `, uniqueWordsMap );
+
+  displayUniqueWords();
+}
+
+function displayUniqueWords() {
+  /* starting from the 2nd row of the table */
+  let rowIndex = 1;
+  uniqueWordsMap.forEach( el => {
+    /* delete placehlder row */
+    document.getElementsByTagName('tbody')[0].insertRow(rowIndex).insertCell().outerHTML = `<th>${el}</th> <input>` ;
+    rowIndex++;
+  } );
+
+  document.getElementsByTagName('tbody')[0].deleteRow(0);
 }
 
 function onSubmit() {
-  console.log("heu");
+  for (let i = 1; i <= uniqueWordsMap.size; i++) {
+    console.log( document.getElementsByTagName('tr')[i].children[1].value );
+  }
+  replaceWords();
+}
+
+function displayFileText(fileText) {
+  document.getElementsByClassName('container__txt')[0].innerHTML = fileText;
+}
+
+function replaceWords() {
+  // uniqueWordsMap.forEach( w => console.log(w) );
 }
