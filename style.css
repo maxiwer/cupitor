@@ -24,3 +24,9 @@ body {
 .menuSection {
   margin: 10px;
 }
+
+.tableSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
