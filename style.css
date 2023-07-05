@@ -21,6 +21,15 @@ body {
   width: 400px;
 }
 
+.modal {
+  background-color: #9db4c0;
+  color: #fff;
+  position: absolute;
+  width: 50vw;
+  max-height: 69vh;
+  overflow: auto;
+}
+
 .menuSection {
   margin: 10px;
 }
@@ -29,4 +38,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+.hide {
+  display: none;
 }

@@ -23,19 +23,11 @@
                 <!-- the body of the table itself -->
                 <tbody>
                     <!-- 1st placeholder row -->
-                    <tr>
-                        <th>Some unique word</th>
+                    <tr id="placeholder">
+                        <th>Here'd be your text's unique words</th>
                         <th>
-                            <textarea name="replaceWith" id="" cols="20" rows="2"
-                                placeholder='Some phrase or word to replace'></textarea>
-                        </th>
-                    </tr>
-                    <!-- 2nd placeholder row -->
-                    <tr>
-                        <th>Another unique word</th>
-                        <th>
-                            <textarea name="replaceWith" id="" cols="20" rows="2"
-                                placeholder='Some phrase or word to replace'></textarea>
+                            <input name="replaceWith" id=""
+                                placeholder='Type here replacements for this words'></input>
                         </th>
                     </tr>
                 </tbody>
@@ -51,8 +43,10 @@
         </div>
     </div>
 
-    <div class="container">
-        <h1 class="container__txt">The text will be pasted here.</h1>
+    <div class="modal hide">
+        <h1 class="container__txt"></h1>
+        <button>Copy</button>
+        <button onclick="toggleModal()">Close</button>
     </div>
 
     <!-- JavaScript File -->
